@@ -32,7 +32,7 @@ export const gameSchema: gameItem[] = [
     classB: "一信",
     start: true,
     aScore: 2,
-    bScore: 1,
+    bScore: 0,
     detailScore: {
       A1: 15,
       A2: 15,
