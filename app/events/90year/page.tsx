@@ -30,6 +30,7 @@ export default function Page() {
           alt="插圖"
           width={200}
           height={200}
+          priority
           className="max-sm:-left-20 left-20 absolute z-0 sm:w-96 sm:top-12"
         ></Image>
         <Image
@@ -37,6 +38,7 @@ export default function Page() {
           alt="插圖"
           width={200}
           height={200}
+          priority
           className="max-sm:-right-20 right-20 top-32 absolute z-0 sm:w-96 sm:top-12"
         ></Image>
         <Image
@@ -45,6 +47,7 @@ export default function Page() {
           width={300}
           height={300}
           className="left-0 w-full max-w-[500px]"
+          priority
         ></Image>
       </div>
       <main className="flex flex-col items-center justify-center gap-6 relative my-3">

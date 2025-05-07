@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "LYCA｜林園班聯 22 屆",
@@ -15,6 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW">
+      <Head>
+        <link
+          rel="preload"
+          href="/fonts/ChenYuluoyan.woff2"
+          as="font"
+          type="font/woff2"
+        />
+      </Head>
       <body
         className={`antialiased font-custom font-medium min-h-dvh flex flex-col`}
       >
