@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "LYCA｜林園班聯 22 屆",
