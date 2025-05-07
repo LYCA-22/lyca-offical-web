@@ -19,7 +19,7 @@ export default function RootLayout({
         className={`antialiased font-custom font-medium min-h-dvh flex flex-col`}
       >
         <header className="fixed top-0 w-full z-10">
-          <div className="bg-white px-5 py-3 shadow-xl shadow-zinc-100">
+          <div className="bg-white px-5 py-3">
             <Link href={"/"}>
               <Image
                 src={"/lyca-logo.svg"}
@@ -30,12 +30,7 @@ export default function RootLayout({
             </Link>
           </div>
         </header>
-        <div className="pt-16">
-          <div className="bg-yellow-500 p-2 px-3 rounded-md mx-4 text-sm text-yellow-800 mt-3">
-            本網站目前為測試版，部分功能未開放
-          </div>
-          {children}
-        </div>
+        <div className="pt-12">{children}</div>
         <footer className="w-full bg-black p-5 flex flex-col items-center justify-center text-sm gap-2 mt-auto">
           <Image
             className="invert"
