@@ -25,7 +25,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`antialiased font-custom font-medium min-h-dvh flex flex-col`}
+        className={`antialiased font-custom font-medium min-h-dvh flex flex-col w-dvw`}
       >
         <header className="fixed top-0 w-full z-50">
           <div className="bg-white px-5 py-3">
