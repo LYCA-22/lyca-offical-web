@@ -144,10 +144,10 @@ export default function Page() {
           </ul>
         </div>
       </main>
-      <div className="z-20 sticky bottom-10 my-5 w-full flex items-center justify-center">
+      <div className="z-50 fixed bottom-10 my-5 w-full flex items-center justify-center">
         <Link
           href={"/"}
-          className="bg-zinc-800 text-white p-3 px-5 text-lg rounded-full shadow-xl shadow-purple-400/50 border border-zinc-600"
+          className="bg-zinc-800 hover:scale-105 transition-all text-white p-3 px-5 text-lg rounded-full shadow-xl shadow-purple-400/50 border border-zinc-600"
         >
           我要投稿
         </Link>
