@@ -7,7 +7,7 @@ export default function Page() {
     <div className="bg-orange-200 relative pb-5">
       <div
         aria-label="title"
-        className="flex flex-col sm:justify-center items-center gap-4 p-4 pt-10 px-6"
+        className="flex flex-col sm:justify-center items-center gap-4 p-9 pt-10 px-6"
       >
         <div
           aria-label="title-text"
@@ -26,7 +26,7 @@ export default function Page() {
           </div>
         </div>
         <Image
-          src={"/90year/image-2.svg"}
+          src={"/90year/image-2.png"}
           alt="插圖"
           width={200}
           height={200}
@@ -34,7 +34,7 @@ export default function Page() {
           className="max-sm:-left-20 left-20 absolute z-0 sm:w-96 sm:top-12"
         ></Image>
         <Image
-          src={"/90year/image-3.svg"}
+          src={"/90year/image-3.png"}
           alt="插圖"
           width={200}
           height={200}
@@ -42,7 +42,7 @@ export default function Page() {
           className="max-sm:-right-20 right-20 top-32 absolute z-0 sm:w-96 sm:top-12"
         ></Image>
         <Image
-          src={"/90year/image-1.svg"}
+          src={"/90year/image-1.png"}
           alt="插圖"
           width={300}
           height={300}
