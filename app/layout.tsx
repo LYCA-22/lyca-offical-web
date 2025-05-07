@@ -16,14 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW">
-      <Head>
+      <head>
         <link
           rel="preload"
           href="/fonts/ChenYuluoyan.woff2"
           as="font"
           type="font/woff2"
+          crossOrigin="anonymous"
         />
-      </Head>
+      </head>
       <body
         className={`antialiased font-custom font-medium min-h-dvh flex flex-col`}
       >
