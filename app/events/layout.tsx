@@ -9,9 +9,9 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   return (
-    <div className={pathname.includes("90year") ? "" : "p-3 px-5"}>
+    <main aria-label="event-main">
       {!pathname.includes("90year") && (
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center m-5">
           <p className="opacity-50">首頁</p>
           <Slash size={12} strokeWidth={3} className="opacity-50"></Slash>
           <p className="opacity-50">活動資訊</p>
@@ -21,6 +21,6 @@ export default function RootLayout({
         </div>
       )}
       {children}
-    </div>
+    </main>
   );
 }

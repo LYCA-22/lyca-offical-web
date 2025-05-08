@@ -6,6 +6,8 @@ interface gameItem {
   aScore: number;
   bScore: number;
   detailScore?: gameScore;
+  place: string;
+  time: string;
 }
 
 interface gameScore {
@@ -25,6 +27,8 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
+    time: "2025/05/12",
+    place: "A",
   },
   {
     round: "(二)",
@@ -41,6 +45,8 @@ export const gameSchema: gameItem[] = [
       B2: 12,
       B3: 0,
     },
+    time: "2025/05/07",
+    place: "A",
   },
   {
     round: "(三)",
@@ -57,6 +63,8 @@ export const gameSchema: gameItem[] = [
       B2: 13,
       B3: 15,
     },
+    time: "2025/05/07",
+    place: "B",
   },
   {
     round: "(四)",
@@ -65,6 +73,8 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
+    time: "2025/05/12",
+    place: "B",
   },
   {
     round: "(五)",
@@ -73,6 +83,8 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
+    time: "2025/05/12",
+    place: "A",
   },
   {
     round: "(六)",
@@ -89,6 +101,8 @@ export const gameSchema: gameItem[] = [
       B2: 15,
       B3: 0,
     },
+    time: "2025/05/07",
+    place: "A",
   },
   {
     round: "(七)",
@@ -97,6 +111,8 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
+    time: "2025/05/12",
+    place: "C",
   },
   {
     round: "(八)",
@@ -105,5 +121,7 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
+    time: "2025/05/12",
+    place: "B",
   },
 ];
