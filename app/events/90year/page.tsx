@@ -203,7 +203,7 @@ export default function Page() {
       <div className="z-50 fixed bottom-10 my-5 w-full flex items-center justify-center gap-5">
         <div className="bg-zinc-800 text-white relative p-3 px-5 text-lg rounded-full flex items-center gap-5 shadow-xl shadow-purple-400/50 border border-zinc-600">
           <Link
-            href={"./90year/apply"}
+            href={"https://tally.so/r/mDYD6j"}
             className="hover:scale-105 transition-all"
           >
             我要投稿
