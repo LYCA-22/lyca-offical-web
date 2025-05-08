@@ -143,14 +143,81 @@ export default function Page() {
             </li>
           </ul>
         </div>
+        <div className="p-7 flex flex-col items-center justify-center">
+          <div className="font-customTwo text-5xl relative w-fit">
+            <h1 className="z-20 inline-block relative">評分方式</h1>
+            <div className="w-full h-2 bg-amber-600 absolute bottom-2 z-0"></div>
+          </div>
+          <div>
+            <div className="flex items-center justify-between">
+              <h1 className="italic font-bold text-3xl text-amber-800 my-5">
+                1 初選
+              </h1>
+              <div className="h-[2px] bg-amber-500 grow ml-5"></div>
+            </div>
+            <p className="text-amber-800">
+              經班聯會、校內老師選出數件作品，進入全校票選。依照以下標準：
+            </p>
+            <ul className="max-w-[800px] text-amber-700 mt-5 flex flex-col gap-3">
+              <li className="flex gap-4 items-center">
+                <p className="italic flex items-center font-black justify-center rounded-full text-amber-700 bg-white p-2">
+                  30%
+                </p>
+                <p className="text-xl">主題意象表達</p>
+              </li>
+              <li className="flex gap-4 items-center">
+                <p className="italic flex items-center font-black justify-center rounded-full text-amber-700 bg-white p-2">
+                  30%
+                </p>
+                <p className="text-xl">視覺效果及美感</p>
+              </li>
+              <li className="flex gap-4 items-center">
+                <p className="italic flex items-center font-black justify-center rounded-full text-amber-700 bg-white p-2">
+                  20%
+                </p>
+                <p className="text-xl">創意型式表現</p>
+              </li>
+              <li className="flex gap-4 items-center">
+                <p className="italic flex items-center font-black justify-center rounded-full text-amber-700 bg-white p-2">
+                  20%
+                </p>
+                <p className="text-xl">衍生商品可行性</p>
+              </li>
+            </ul>
+            <div className="flex items-center justify-between">
+              <h1 className="italic font-bold text-3xl text-amber-800 my-5">
+                2 全校票選
+              </h1>
+              <div className="h-[2px] bg-amber-500 grow ml-5"></div>
+            </div>
+            <p className="text-amber-800">開放全校各班每人一票選出第一名。</p>
+          </div>
+        </div>
+        <div className="p-7 flex flex-col items-center justify-center">
+          <div className="font-customTwo text-5xl relative w-fit">
+            <h1 className="z-20 inline-block relative">相關時程</h1>
+            <div className="w-full h-2 bg-amber-600 absolute bottom-2 z-0"></div>
+          </div>
+        </div>
       </main>
-      <div className="z-50 fixed bottom-10 my-5 w-full flex items-center justify-center">
-        <Link
-          href={"/"}
-          className="bg-zinc-800 hover:scale-105 transition-all text-white p-3 px-5 text-lg rounded-full shadow-xl shadow-purple-400/50 border border-zinc-600"
-        >
-          我要投稿
-        </Link>
+      <div className="z-50 fixed bottom-10 my-5 w-full flex items-center justify-center gap-5">
+        <div className="bg-zinc-800 text-white relative p-3 px-5 text-lg rounded-full flex items-center gap-5 shadow-xl shadow-purple-400/50 border border-zinc-600">
+          <Link
+            href={"./90year/apply"}
+            className="hover:scale-105 transition-all"
+          >
+            我要投稿
+          </Link>
+          <div className="w-[1px] h-4 bg-white"></div>
+          <Link
+            className="hover:scale-105 transition-all"
+            href={
+              "https://storage.lyhsca.org/90%E5%91%A8%E5%B9%B4%E6%A0%A1%E6%85%B6logo%E6%A8%99%E8%AA%9E%E8%A8%AD%E8%A8%88%E7%AB%B6%E8%B3%BD%E5%A0%B1%E5%90%8D%E8%A1%A8%E5%8F%8A%E5%88%87%E7%B5%90%E6%9B%B8.docx"
+            }
+          >
+            報名表下載
+          </Link>
+        </div>
       </div>
     </div>
   );
