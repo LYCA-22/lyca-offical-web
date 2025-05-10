@@ -27,7 +27,7 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
-    time: "2025/05/12",
+    time: "2025/05/12 10:10",
     place: "A",
   },
   {
@@ -73,7 +73,7 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
-    time: "2025/05/12",
+    time: "2025/05/12 10:10",
     place: "B",
   },
   {
@@ -83,7 +83,7 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
-    time: "2025/05/12",
+    time: "2025/05/12 10:50",
     place: "A",
   },
   {
@@ -106,12 +106,12 @@ export const gameSchema: gameItem[] = [
   },
   {
     round: "(七)",
-    classA: "(三)勝",
+    classA: "一仁",
     classB: "二愛",
     start: false,
     aScore: 0,
     bScore: 0,
-    time: "2025/05/12",
+    time: "2025/05/12 10:10",
     place: "C",
   },
   {
@@ -121,7 +121,7 @@ export const gameSchema: gameItem[] = [
     start: false,
     aScore: 0,
     bScore: 0,
-    time: "2025/05/12",
+    time: "2025/05/12 10:50",
     place: "B",
   },
 ];
