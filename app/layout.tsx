@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import Image from "next/image";
-import Link from "next/link";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
   title: "LYCA｜林園班聯 22 屆",
@@ -27,18 +27,7 @@ export default function RootLayout({
       <body
         className={`antialiased font-custom font-medium min-h-dvh flex flex-col overflow-x-hidden max-w-full`}
       >
-        <header className="fixed top-0 w-full z-50">
-          <div className="bg-white px-5 py-3">
-            <Link href={"/"}>
-              <Image
-                src={"/lyca-logo.svg"}
-                alt="lyca-logo"
-                width={100}
-                height={200}
-              ></Image>
-            </Link>
-          </div>
-        </header>
+        <Header />
         <div className="pt-12">{children}</div>
         <footer className="w-full bg-black p-5 flex flex-col items-center justify-center text-sm gap-2 mt-auto">
           <Image

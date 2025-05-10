@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <main aria-label="event-main">
       {!pathname.includes("90year") && (
-        <div className="flex gap-2 items-center m-5">
+        <div className="flex gap-2 items-center mx-5 my-2 bg-zinc-100 p-2 rounded-2xl px-4">
           <p className="opacity-50">首頁</p>
           <Slash size={12} strokeWidth={3} className="opacity-50"></Slash>
           <p className="opacity-50">活動資訊</p>
