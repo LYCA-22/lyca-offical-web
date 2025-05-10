@@ -34,7 +34,7 @@ export default function Page() {
       <div className="my-5 p-5" aria-label="schedule">
         <h1 className="text-2xl">賽程表</h1>
         <p className="opacity-50 mt-2">
-          更新日期：2025/05/02 ｜ 抽籤日期：2025/05/02
+          更新日期：2025/05/10 ｜ 抽籤日期：2025/05/02
         </p>
         <div className="flex flex-col items-center justify-center">
           <Image
@@ -80,7 +80,7 @@ export default function Page() {
       </div>
       <div aria-label="game-consequence" className="my-5 bg-zinc-100/70 p-5">
         <h1 className="text-2xl">所有賽事結果</h1>
-        <p className="opacity-50 mt-2">更新日期：2025/05/07</p>
+        <p className="opacity-50 mt-2">更新日期：2025/05/10</p>
         <ul className="flex flex-col gap-5 my-3">
           {gameSchema.map((item, index) => (
             <li
