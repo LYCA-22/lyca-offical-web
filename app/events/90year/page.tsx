@@ -22,7 +22,7 @@ export default function Page() {
           x: e.clientX,
           y: e.clientY,
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       }
 
@@ -30,15 +30,15 @@ export default function Page() {
       gsap.to("[aria-label='title-text']", {
         x: (e.clientX - window.innerWidth / 2) * 0.01,
         y: (e.clientY - window.innerHeight / 2) * 0.01,
-        duration: 0.5
+        duration: 0.5,
       });
-    
+
       // 為圖像添加視差效果
       gsap.to(".parallax-image", {
         x: (e.clientX - window.innerWidth / 2) * 0.02,
         y: (e.clientY - window.innerHeight / 2) * 0.02,
         duration: 0.8,
-        stagger: 0.1
+        stagger: 0.1,
       });
     };
 
@@ -121,12 +121,12 @@ export default function Page() {
       start: "top 80%",
       onEnter: () => {
         gsap.fromTo(
-          "[aria-label='活動目的']", 
+          "[aria-label='活動目的']",
           { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 0.8 }
+          { opacity: 1, y: 0, duration: 0.8 },
         );
       },
-      once: false
+      once: false,
     });
 
     // 「我入選了」區塊
@@ -219,7 +219,10 @@ export default function Page() {
             <p className="text-lg text-amber-800">林園高中家長會</p>
           </div>
         </div>
-        <div className="flex-col flex items-center gap-5 relative min-h-[200px]" aria-label="活動目的">
+        <div
+          className="flex-col flex items-center gap-5 relative min-h-[200px]"
+          aria-label="活動目的"
+        >
           <div className="font-customTwo text-5xl relative w-fit">
             <h1 className="z-20 inline-block relative">活動目的</h1>
             <div className="w-full h-2 bg-amber-600 absolute bottom-2 z-0"></div>
@@ -374,7 +377,7 @@ export default function Page() {
               要報名的人記得要注意時程喔！
             </p>
           </div>
-          <div className="bg-white p-10 rounded-4xl shadow-xl shadow-zinc-200/80 z-10">
+          <div className="border-2 bg-gradient-to-br from-orange-50/90 to-orange-200 border-orange-100 backdrop-blur-lg p-10 rounded-4xl z-10">
             <ul className="max-w-[800px] text-amber-700 flex flex-col gap-3 relative">
               <li className="flex flex-col gap-3 z-10">
                 <div className="flex items-center gap-4">
@@ -433,8 +436,8 @@ export default function Page() {
           </div>
         </div>
       </main>
-      <div className="z-50 fixed bottom-10 my-5 w-full flex items-center justify-center gap-5">
-        <div className="bg-zinc-800 text-white relative p-3 px-5 text-lg rounded-full flex items-center gap-5 shadow-xl shadow-purple-400/50 border border-zinc-600">
+      <div className="z-50 fixed bottom-3 my-5 w-full flex items-center justify-center gap-5">
+        <div className="bg-zinc-800 text-white relative p-3 px-5 text-[16px] rounded-full flex items-center gap-5 shadow-xl shadow-purple-400/50 border border-zinc-600">
           <Link
             href={"https://tally.so/r/mDYD6j"}
             className="hover:scale-105 transition-all"
