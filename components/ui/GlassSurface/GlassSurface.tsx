@@ -2,7 +2,7 @@
 	Installed from https://reactbits.dev/ts/tailwind/
 */
 
-import React, { useEffect, useRef, useState, useId } from "react";
+import React, { useEffect, useRef, useState, useId, useCallback } from "react";
 
 export interface GlassSurfaceProps {
   children?: React.ReactNode;
@@ -84,7 +84,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
   className = "",
   style = {},
 }) => {
-  const uniqueId = useId().replace(/:/g, '-');
+  const uniqueId = useId().replace(/:/g, "-");
   const filterId = `glass-filter-${uniqueId}`;
   const redGradId = `red-grad-${uniqueId}`;
   const blueGradId = `blue-grad-${uniqueId}`;
@@ -98,7 +98,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
 
   const isDarkMode = useDarkMode();
 
-  const generateDisplacementMap = () => {
+  const generateDisplacementMap = useCallback(() => {
     const rect = containerRef.current?.getBoundingClientRect();
     const actualWidth = rect?.width || 400;
     const actualHeight = rect?.height || 200;
@@ -124,11 +124,20 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     `;
 
     return `data:image/svg+xml,${encodeURIComponent(svgContent)}`;
-  };
+  }, [
+    borderRadius,
+    borderWidth,
+    brightness,
+    opacity,
+    blur,
+    mixBlendMode,
+    redGradId,
+    blueGradId,
+  ]);
 
-  const updateDisplacementMap = () => {
+  const updateDisplacementMap = useCallback(() => {
     feImageRef.current?.setAttribute("href", generateDisplacementMap());
-  };
+  }, [generateDisplacementMap]);
 
   useEffect(() => {
     updateDisplacementMap();
@@ -140,7 +149,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
       if (ref.current) {
         ref.current.setAttribute(
           "scale",
-          (distortionScale + offset).toString()
+          (distortionScale + offset).toString(),
         );
         ref.current.setAttribute("xChannelSelector", xChannel);
         ref.current.setAttribute("yChannelSelector", yChannel);
@@ -164,6 +173,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     xChannel,
     yChannel,
     mixBlendMode,
+    updateDisplacementMap,
   ]);
 
   useEffect(() => {
@@ -178,7 +188,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     return () => {
       resizeObserver.disconnect();
     };
-  }, []);
+  }, [updateDisplacementMap]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -192,13 +202,15 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     return () => {
       resizeObserver.disconnect();
     };
-  }, []);
+  }, [updateDisplacementMap]);
 
   useEffect(() => {
     setTimeout(updateDisplacementMap, 0);
-  }, [width, height]);
+  }, [width, height, updateDisplacementMap]);
 
   const supportsSVGFilters = () => {
+    if (typeof window === "undefined") return false;
+
     const isWebkit =
       /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
     const isFirefox = /Firefox/.test(navigator.userAgent);
@@ -207,7 +219,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
       return false;
     }
 
-    const div = document.createElement("div");
+    const div = window.document.createElement("div");
     div.style.backdropFilter = `url(#${filterId})`;
     return div.style.backdropFilter !== "";
   };
