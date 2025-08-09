@@ -1,5 +1,4 @@
 "use client";
-import { Slash } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function RootLayout({
@@ -9,18 +8,17 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   return (
-    <main aria-label="event-main">
-      {!pathname.includes("90year") && (
-        <div className="flex gap-2 items-center mx-5 my-2 bg-zinc-100 p-2 rounded-2xl px-4">
-          <p className="opacity-50">首頁</p>
-          <Slash size={12} strokeWidth={3} className="opacity-50"></Slash>
-          <p className="opacity-50">活動資訊</p>
-          <Slash size={12} strokeWidth={3} className="opacity-50"></Slash>
-          {pathname.includes("stucamp") && <p>2025 學生自治工作坊</p>}
-          {pathname.includes("baseball") && <p>113-2 班際排球</p>}
+    <main
+      aria-label="event-main"
+      className="bg-gradient-to-br from-white to-zinc-300"
+    >
+      {pathname === "/events" && (
+        <div className="p-4 px-8 pt-8">
+          <h1 className="text-3xl font-bold opacity-80">活動資訊</h1>
+          <p className="opacity-30">All Events</p>
         </div>
       )}
-      {children}
+      <div className="bg-white rounded-tr-4xl">{children}</div>
     </main>
   );
 }

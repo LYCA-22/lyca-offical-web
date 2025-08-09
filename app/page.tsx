@@ -45,12 +45,13 @@ export default function Home() {
                 alt="Lyca Logo"
                 width={500}
                 height={700}
+                className="rounded-3xl"
               ></Image>
               <Link
                 href={"https://www.instagram.com/lyca_22nd/"}
-                className="bg-green-900 text-white text-sm font-medium p-2 px-4 absolute bottom-0 left-5"
+                className="bg-green-900 text-white text-sm p-2 px-4 absolute bottom-5 left-10 rounded-full font-bold"
               >
-                前往追蹤
+                點我前往追蹤
               </Link>
             </CarouselItem>
           </CarouselContent>
@@ -62,7 +63,7 @@ export default function Home() {
       <div className="flex flex-col justify-center gap-2 grow p-8">
         <div className="flex items-center gap-2">
           <Cog size={20}></Cog>
-          <h1 className="text-xl">目前網站仍在建置中</h1>
+          <h2 className="text-xl">目前網站仍在建置中</h2>
         </div>
         <div className="pb-2">以下為可使用的服務：</div>
         <button

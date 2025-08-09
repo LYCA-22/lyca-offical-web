@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+::selection {
+    background-color: #06df73;
+    color: #305c4f;
+}
+
 @font-face {
     font-family: "LINE Seed TW";
     src: url("/fonts/LINESeedTW_OTF_Th.woff2") format("woff2");

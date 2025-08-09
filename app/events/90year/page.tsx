@@ -88,14 +88,14 @@ export default function Page() {
 
     // 相關時程區塊動畫
     gsap.fromTo(
-      ".relative ul li",
+      ".timesBox",
       { opacity: 0, x: -50 },
       { opacity: 1, x: 0, duration: 1, stagger: 0.2, ease: "power2.out" },
     );
 
     // 底部按鈕動畫
     gsap.fromTo(
-      ".z-50.fixed",
+      ".bottomButton",
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: 1 },
     );
@@ -368,7 +368,7 @@ export default function Page() {
               className="absolute -left-16 top-14 max-sm:top-32"
             ></Image>
           </div>
-          <div className="z-10 sm:-ml-32">
+          <div className="timesBox z-10 sm:-ml-32">
             <div className="font-customTwo text-6xl relative w-fit">
               <h1 className="z-20 inline-block relative">相關時程</h1>
               <div className="w-full h-2 bg-amber-600 absolute bottom-2 z-0"></div>
@@ -436,7 +436,7 @@ export default function Page() {
           </div>
         </div>
       </main>
-      <div className="z-50 fixed bottom-3 my-5 w-full flex items-center justify-center gap-5">
+      <div className="bottomButton z-50 fixed bottom-3 my-5 w-full flex items-center justify-center gap-5">
         <div className="bg-zinc-800 text-white relative p-3 px-5 text-[16px] rounded-full flex items-center gap-5 shadow-xl shadow-purple-400/50 border border-zinc-600">
           <Link
             href={"https://tally.so/r/mDYD6j"}

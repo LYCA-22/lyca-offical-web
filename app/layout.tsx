@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import Image from "next/image";
 import { LinkBar } from "@/components/linkBar";
+import { MouseFollower } from "@/components/mouseFollower";
 
 export const metadata: Metadata = {
   title: "林園高中學生會 LYSA",
@@ -50,20 +50,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`antialiased font-custom font-medium min-h-dvh flex flex-col overflow-x-hidden max-w-full`}
+        className={`antialiased font-custom font-medium h-dvh overflow-y-scroll flex flex-col overflow-x-hidden max-w-full`}
       >
         <LinkBar />
+        <MouseFollower />
         <div id="main">{children}</div>
-        <footer className="w-full bg-zinc-50 p-5 flex flex-col items-center justify-center text-sm gap-2 mt-auto pb-32">
-          <Image
-            src={"/lyca-logo.svg"}
-            alt="lyca-logo"
-            width={100}
-            height={200}
-          ></Image>
-          <p className="text-foreground/50">本網站由班聯會資訊組維護與建置</p>
-          <p className="text-foreground/50">2025 © 林園高中班聯會 版權所有</p>
-        </footer>
       </body>
     </html>
   );
