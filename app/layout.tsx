@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import { LinkBar } from "@/components/linkBar";
-import { MouseFollower } from "@/components/mouseFollower";
 
 export const metadata: Metadata = {
   title: "林園高中學生會 LYSA",
@@ -50,11 +49,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`antialiased font-custom font-medium h-dvh overflow-y-scroll flex flex-col overflow-x-hidden max-w-full`}
+        className={`antialiased font-medium h-dvh overflow-y-scroll flex flex-col overflow-x-hidden max-w-full`}
       >
         <LinkBar />
-        <MouseFollower />
-        <div id="main">{children}</div>
+        <div id="main" className="mt-10">
+          {children}
+        </div>
       </body>
     </html>
   );
