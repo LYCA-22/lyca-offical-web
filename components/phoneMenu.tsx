@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ChevronRight, X } from "lucide-react";
+import { Plus } from "lucide-react";
 import { pages_config } from "@/config/route";
 
 export default function PhoneMenu({
@@ -66,18 +66,10 @@ export default function PhoneMenu({
   return (
     <div
       ref={menuRef}
-      className={`p-10 px-5 pt-5 pb-2 menu fixed z-50 text-white font-bold w-full bg-green-500 border-b-3 border-white ${!open ? "pointer-events-none" : ""}`}
+      className={`p-10 px-5 pt-5 pb-2 menu fixed z-40 text-white font-bold w-full bg-green-500 rounded-b-4xl ${!open ? "pointer-events-none" : ""}`}
     >
       <div className="flex justify-between items-center mb-5">
-        <p className="font-neue font-bold text-xl">LYCA</p>
-        <button
-          className="ml-auto bg-white p-1 rounded-full text-black"
-          onClick={() => {
-            setOpen(!open);
-          }}
-        >
-          <X size={21} />
-        </button>
+        <p className="font-neue font-bold text-xl">LYCA@22</p>
       </div>
       <div className="flex flex-col gap-3 sm:grow sm:justify-between sm:py-28">
         {pages_config.map((item, i) => (
@@ -94,13 +86,13 @@ export default function PhoneMenu({
                     </p>
                     <p className="text-[18px]">{item.title}</p>
                   </div>
-                  <ChevronRight
+                  <Plus
                     size={20}
-                    className={`${openindex === i + 1 ? "rotate-90" : ""} transition-all`}
+                    className={`${openindex === i + 1 ? "rotate-45" : ""} transition-all`}
                   />
                 </div>
                 <div
-                  className={`${openindex === i + 1 ? "block" : "hidden"} w-full border-y border-green-400/80 py-2`}
+                  className={`${openindex === i + 1 ? "block" : "hidden"} w-full border border-t-0 rounded-b-3xl border-green-400/80 pb-2 flex flex-col gap-2`}
                 >
                   {item.children &&
                     item.children.map((child, i) => (

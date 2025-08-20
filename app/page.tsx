@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, Cog } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,7 +12,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="mt-5 relative">
+    <main className="mt-14 relative">
       <div className="max-sm:p-4 p-7 min-h-dvh flex flex-col items-center justify-center relative">
         <div className="relative p-20 max-sm:p-6 max-sm:pb-0 w-full rounded-t-4xl bg-gradient-to-b from-green-100 to-white/0 h-dvh">
           <div className="w-full flex flex-col gap-4 max-sm:gap-2">
@@ -56,17 +56,19 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="w-full bg-zinc-200 h-[1px] mb-5 flex items-center justify-center">
+          <Plus className="absolute" size={18} />
+        </div>
         <div className="flex flex-col gap-3 sm:px-3 w-full">
           <Carousel className="grow">
-            <div className="mb-5 mx-3">
+            <div className="mb-5 mx-3 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:p-5">
               <div className="relative flex items-center gap-2 font-neue font-bold">
                 <div className="bg-white z-10 flex items-center gap-2 pr-4">
                   <div className="h-4 w-4 bg-green-500 rounded-[5px]"></div>
                   <p className="text-lg">Latest News</p>
                 </div>
-                <div className="w-full bg-zinc-300 h-[1px] absolute left-0 z-0"></div>
               </div>
-              <div className="items-center flex gap-2 justify-between mt-3">
+              <div className="items-center flex max-sm:flex-col gap-5 justify-between mt-3">
                 <h2 className="text-3xl">最新公告</h2>
                 <div className="relative flex items-center rounded-full bg-zinc-200">
                   <CarouselPrevious className="flex border-0 left-0 bottom-0 bg-transparent" />
@@ -77,7 +79,7 @@ export default function Home() {
             <CarouselContent>
               <CarouselItem>
                 <Image
-                  src={"/post/post-1.svg"}
+                  src={"/image/announcement/post-1.svg"}
                   alt="Lyca Logo"
                   width={300}
                   height={500}
@@ -92,7 +94,7 @@ export default function Home() {
               </CarouselItem>
               <CarouselItem>
                 <Image
-                  src={"/post/post-2.png"}
+                  src={"/image/announcement/post-2.png"}
                   alt="Lyca Logo"
                   width={300}
                   height={500}
@@ -103,29 +105,52 @@ export default function Home() {
           </Carousel>
         </div>
       </div>
-      <div className="w-full h-[1px] bg-zinc-200"></div>
-      <div className="flex flex-col justify-center gap-2 grow p-8">
-        <div className="flex items-center gap-2">
-          <Cog size={20}></Cog>
-          <h2 className="text-xl">目前網站仍在建置中</h2>
+      <div className="p-5 sm:px-10">
+        <div className="w-full bg-zinc-200 h-[1px] flex items-center justify-center">
+          <Plus className="absolute" size={18} />
         </div>
-        <div className="pb-2">以下為可使用的服務：</div>
-        <button
-          onClick={() => {
-            window.alert("活動已結束");
-          }}
-          className="hover:opacity-50 bg-zinc-100 border border-zinc-200 p-3 rounded-2xl opacity-80 flex justify-between items-center"
-        >
-          查閱班際排球資訊
-          <ArrowRight size={20} className="opacity-80"></ArrowRight>
-        </button>
-        <Link
-          href={"./events/90year"}
-          className="hover:opacity-50 bg-zinc-100 border border-zinc-200 p-3 rounded-2xl opacity-80 flex justify-between items-center mt-2"
-        >
-          90 週年主視覺設計大賽活動網站
-          <ArrowRight size={20} className="opacity-80"></ArrowRight>
-        </Link>
+        <div className="relative flex flex-col gap-2 font-neue font-bold m-3 my-5 max-sm:items-center max-sm:justify-center max-sm:p-5">
+          <div className="flex items-center gap-2">
+            <div className="h-4 w-4 bg-green-500 rounded-[5px]"></div>
+            <p className="text-lg">Events</p>
+          </div>
+          <div className="flex justify-between items-center max-sm:flex-col max-sm:justify-center gap-5">
+            <h2 className="text-3xl">活動資訊</h2>
+            <Link
+              href={"/events"}
+              className="rounded-full p-2 pr-4 bg-white text-black border border-border flex gap-3 items-center group hover:opacity-50 transition-all w-fit"
+            >
+              <div className="p-1 rounded-full bg-green-500 text-black group-hover:bg-green-500">
+                <ArrowRight size={20} />
+              </div>
+              <p className="text-xl max-sm:text-lg">查看更多</p>
+            </Link>
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <Link
+            href={"./events/90year"}
+            className="bg-zinc-100 rounded-4xl border border-border p-5 flex flex-col gap-2 max-w-sm"
+          >
+            <Image
+              src={"/image/events/90year.png"}
+              alt="Lyca Logo"
+              width={500}
+              height={500}
+              className="rounded-xl"
+            ></Image>
+            <p className="text-sm opacity-50">
+              為歡慶本校 「 創校九十週年校慶
+              」活動，特舉辦「林園高中創校九十校慶logo設計比賽」，盼透過學生對校園及故鄉的觀察，發揮創意設計，製作為各種紀念品，並作為未來推廣及相關活動、販售之用。
+            </p>
+            <div className="rounded-full p-2 pr-4 bg-white text-black border border-border flex gap-3 items-center group hover:opacity-50 transition-all w-fit">
+              <div className="p-1 rounded-full bg-green-500 text-black group-hover:bg-green-500">
+                <ArrowRight size={20} />
+              </div>
+              <p className="text-xl max-sm:text-lg">前往主題網站</p>
+            </div>
+          </Link>
+        </div>
       </div>
     </main>
   );

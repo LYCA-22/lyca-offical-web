@@ -151,7 +151,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="bg-orange-200 relative pb-5 overflow-x-hidden">
+    <div className="bg-orange-200 relative pb-5 overflow-x-hidden pt-10">
       {/* 添加跟隨鼠標的元素 */}
       <div
         ref={mouseFollower}
