@@ -1,49 +1,43 @@
+"use client";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "./ui/navigation-menu";
 import { pages_config } from "@/config/route";
 
 export default function DesktopMenu() {
   return (
-    <NavigationMenu viewport={false} className="max-sm:hidden">
-      <NavigationMenuList>
-        {pages_config.map((item, index) => (
-          <NavigationMenuItem key={index}>
-            {item.isGroup ? (
-              <>
-                <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-4">
-                    <li>
-                      {item.children &&
-                        item.children.map((child, index) => (
-                          <NavigationMenuLink asChild key={index}>
-                            <Link href={child.link || ""}>
-                              <div className="font-medium">{child.title}</div>
-                              <div className="text-muted-foreground">
-                                {child.description}
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </>
-            ) : (
-              <NavigationMenuLink asChild>
-                <Link href={item.link || ""}>{item.title}</Link>
-              </NavigationMenuLink>
-            )}
-          </NavigationMenuItem>
-        ))}
-      </NavigationMenuList>
-    </NavigationMenu>
+    <div className="flex gap-4 py-2 max-sm:hidden text-lg">
+      {pages_config.map((item, index) => (
+        <div key={index}>
+          {item.isGroup ? (
+            <div className="group font-neue font-bold" key={index}>
+              <div className="flex gap-2 items-center">
+                <p className="text-sm opacity-50">0{index + 1} / </p>
+                <h3>{item.title}</h3>
+              </div>
+              <div className="-z-10 p-2 flex flex-col text-[16px] bg-white rounded-2xl border border-border shadow-2xl shadow-zinc-300 absolute opacity-0 scale-75 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:z-10 transition-all">
+                {item.children &&
+                  item.children.map((child, childIndex) => (
+                    <Link
+                      key={childIndex}
+                      href={child.link}
+                      className="hover:bg-zinc-100 rounded-lg p-2 px-3"
+                    >
+                      {child.title}
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          ) : (
+            <Link
+              key={index}
+              href={item.link || ""}
+              className="flex items-center gap-2 font-neue font-bold"
+            >
+              <p className="text-sm opacity-50">0{index + 1} / </p>
+              <p>{item.title}</p>
+            </Link>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }

@@ -3,11 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-::selection {
-    background-color: #06df73;
-    color: #305c4f;
-}
-
 @font-face {
     font-family: "LINE Seed TW";
     src: url("/fonts/LINESeedTW_OTF_Th.woff2") format("woff2");
@@ -47,6 +42,38 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "neue";
+    src: url("/fonts/neue/NeuePower-Light.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "neue";
+    src: url("/fonts/neue/NeuePower-Regular-qo7lrz.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "neue";
+    src: url("/fonts/neue/NeuePower-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "neue";
+    src: url("/fonts/neue/NeuePower-Ultra.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 html,
 body {
     overflow-x: hidden;
@@ -59,6 +86,7 @@ body {
     --font-mono: var(--font-geist-mono);
     --font-custom: "LINE Seed TW";
     --font-customTwo: "ChenYuluoyan";
+    --font-neue: "neue";
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

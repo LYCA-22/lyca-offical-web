@@ -1,5 +1,5 @@
 "use client";
-import { Menu } from "lucide-react";
+import { Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -12,9 +12,9 @@ export function LinkBar() {
   return (
     <>
       <header
-        className={` bg-white w-full z-40 flex items-center p-3 justify-center fixed top-0 max-sm:h-14`}
+        className={` bg-gradient-to-b from-green-100 to-white/0 w-full z-40 flex items-center max-sm:p-3 p-5 justify-between fixed top-0 max-sm:h-14 border-t-3 border-green-500 max-sm:px-5 max-sm:pt-5 px-10`}
       >
-        <div className="absolute left-10 max-sm:left-8">
+        <div>
           <Link href={"/"}>
             <Image
               src={"/lyca-logo-no-text.svg"}
@@ -29,9 +29,9 @@ export function LinkBar() {
           onClick={() => {
             setOpen(!open);
           }}
-          className="absolute right-10 max-sm:right-8 z-10 bg-white sm:hidden"
+          className="bg-green-500 rounded-full p-1 text-white sm:hidden"
         >
-          <Menu size={22} />
+          <Plus size={21} />
         </button>
       </header>
       <PhoneMenu open={open} setOpen={setOpen} />
