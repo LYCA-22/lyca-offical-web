@@ -9,8 +9,43 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+import { apiService } from "@/service/api";
+
+interface Announcement {
+  id: string;
+  title: string;
+  content: string;
+  info: {
+    isPriority: boolean;
+    link: {
+      haveLink: boolean;
+      link: string;
+    };
+    created_info: {
+      created_userId: number;
+    };
+  };
+  imgData: string;
+}
 
 export default function Home() {
+  const [announcementData, setData] = useState<Announcement[]>([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const announcements = await apiService.listAnnouncement();
+        setData(announcements.data);
+      } catch (error) {
+        console.error("Error fetching announcements:", error);
+        throw error;
+      }
+    };
+
+    getData();
+  }, []);
+
   return (
     <main className="mt-14 relative">
       <div className="max-sm:p-4 p-7 min-h-dvh flex flex-col items-center justify-center relative">
@@ -77,30 +112,37 @@ export default function Home() {
               </div>
             </div>
             <CarouselContent>
-              <CarouselItem>
-                <Image
-                  src={"/image/announcement/post-1.svg"}
-                  alt="Lyca Logo"
-                  width={300}
-                  height={500}
-                  className="rounded-4xl"
-                ></Image>
-                <Link
-                  href={"https://www.instagram.com/lyca_22nd/"}
-                  className="bg-white text-sm p-2 px-4 absolute bottom-5 left-10 rounded-xl font-bold"
-                >
-                  點我前往追蹤
-                </Link>
-              </CarouselItem>
-              <CarouselItem>
-                <Image
-                  src={"/image/announcement/post-2.png"}
-                  alt="Lyca Logo"
-                  width={300}
-                  height={500}
-                  className="rounded-4xl"
-                ></Image>
-              </CarouselItem>
+              {announcementData &&
+                announcementData.map((announcement) => (
+                  <>
+                    {!announcement.info.isPriority && (
+                      <CarouselItem key={announcement.id}>
+                        {announcement.info.link.haveLink ? (
+                          <Link
+                            target="_blank"
+                            href={announcement.info.link.link}
+                          >
+                            <Image
+                              src={`data:image/jpeg;base64,${announcement.imgData}`}
+                              alt="Announcement Image"
+                              width={300}
+                              height={500}
+                              className="rounded-4xl"
+                            ></Image>
+                          </Link>
+                        ) : (
+                          <Image
+                            src={`data:image/jpeg;base64,${announcement.imgData}`}
+                            alt="Announcement Image"
+                            width={300}
+                            height={500}
+                            className="rounded-4xl"
+                          ></Image>
+                        )}
+                      </CarouselItem>
+                    )}
+                  </>
+                ))}
             </CarouselContent>
           </Carousel>
         </div>
