@@ -77,7 +77,7 @@ export default function PhoneMenu({
             {item.isGroup ? (
               <button
                 onClick={() => setIndex(openindex == i + 1 ? 0 : i + 1)}
-                className="flex flex-col gap-3 w-full items-center justify-between group"
+                className="flex flex-col w-full items-center justify-between group"
               >
                 <div className="w-full items-center justify-between flex">
                   <div className="flex items-center gap-2">
@@ -92,7 +92,7 @@ export default function PhoneMenu({
                   />
                 </div>
                 <div
-                  className={`${openindex === i + 1 ? "block" : "hidden"} w-full border border-t-0 rounded-b-3xl border-green-400/80 pb-2 flex flex-col gap-2`}
+                  className={`${openindex === i + 1 ? "max-h-96 py-2 border-green-400/80" : "max-h-0 border-transparent"} transition-all overflow-y-auto w-full border border-t-0 rounded-b-3xl  flex flex-col duration-700 gap-2`}
                 >
                   {item.children &&
                     item.children.map((child, i) => (

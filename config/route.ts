@@ -13,6 +13,11 @@ export const pages_config = [
         link: "/about/staff",
         description: "關於本屆學生會幹部",
       },
+      {
+        title: "最新公告",
+        link: "/about/announcement",
+        description: "了解我們的最新動態",
+      },
 
       {
         title: "我們的使命",

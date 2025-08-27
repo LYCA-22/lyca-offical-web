@@ -10,4 +10,15 @@ export const apiService = {
       throw error;
     }
   },
+  async GetAnnouncement(id: string) {
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/v1/lyps/announcement?id=${id}`,
+      );
+      return await response.json();
+    } catch (error) {
+      console.error("Error fetching announcements:", error);
+      throw error;
+    }
+  },
 };
